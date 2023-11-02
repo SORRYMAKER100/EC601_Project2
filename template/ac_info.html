@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<title>List Record</title>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+<script src="/static/js/jquery.min.js"></script>
+		<script src="/static/js/config.js"></script>
+		<script src="/static/js/skel.min.js"></script>
+        <script src="/static/js/getid.js"></script>
+		<link rel="stylesheet" href="/static/css/skel-noscript.css" />
+		<link rel="stylesheet" href="/static/css/style.css" />
+		<link rel="stylesheet" href="/static/css/style-desktop.css" />
+<head>
+    <title>Title</title>
+</head>
+<nav id="nav">
+		<ul>
+			<li><a href =search>User Search</a></li>
+            <li><a href =search3>Activity Search</a></li>
+			<li><a href = register>Register</a></li>
+			<li><a id = demo href = login>studentid</a></li>
+		</ul>
+</nav>
+<body>
+<div align="center">
+    <table width="400" border="1" cellpadding="2" cellspacing="0">
+<td colspan="8" align="center"><font face="times new roman"><h1><i>View All Data</i> </h1></font>
+</td>
+    <tr>
+
+        <td align="center"><b>加入</b></td>
+        <td align="center"><b>活动id</b></td>
+        <td align="center"><b>活动类型</b></td>
+        <td align="center"><b>最大人数</b></td>
+        <td align="center"><b>最小人数</b></td>
+        <td align="center"><b>开始时间</b></td>
+        <td align="center"><b>结束时间</b></td>
+        <td align="center"><b>地点</b></td>
+        <td align="center"><b>现有人数</b></td>
+        <td align="center"><b>简介</b></td>
+
+        <br>
+    </tr>
+        {% for i in jieguo %}
+            <tr>
+                <td align="center"><button id = 'button2'  onclick="submit2(this)" value ={{ i[0] }} ></button></td>
+                <td align="center">{{ i[0] }}</td>
+                <td align="center">{{ i[1] }}</td>
+                <td align="center">{{ i[2] }}</td>
+                <td align="center">{{ i[3] }}</td>
+                <td align="center">{{ i[4] }}</td>
+                <td align="center">{{ i[5] }}</td>
+                <td align="center">{{ i[6] }}</td>
+                <td align="center">{{ i[7] }}</td>
+                <td align="center">{{ i[8] }}</td>
+
+                <br>
+            </tr>
+    {% endfor %}
+</td>
+    </table>
+</center></div>
+<script>
+ function submit2(e) {
+     $.ajax({
+         url: "OBDC3", /*数据提交到submit处*/
+         type: "POST", /*采用POST方法提交*/
+         data: {"a_id":e.value, "stu_no":JSON.parse(localStorage.getItem('a'))}, /*提交的数据（json格式），从输入框中获取*/
+ success: function () {
+     window.location.href = 'OBDC3'
+ }
+     })
+ }
+ </script>
+</body>
+</html>

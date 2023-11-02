@@ -1,0 +1,115 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>注册模块</title>
+		<meta charset="utf-8">
+		<style>
+			
+			
+			#vcode {
+				height: 35px;
+				width: 40%;
+				font-size: 15pt;
+				margin-left: 15%;
+				border-radius: 5px;
+				border: 1;
+				padding-left: 8px;
+			}
+			
+			#code {
+				color: #ffffff;
+				/*字体颜色白色*/
+				background-color: #000000;
+				font-size: 20pt;
+				font-family: "华康娃娃体W5";
+				padding: 5px 35px 10px 35px;
+				margin-left: 5%;
+				cursor: pointer;
+			}
+			
+			#search_pass_link {
+				width: 70%;
+				text-align: right;
+				margin: 0 auto;
+				padding: 5px;
+			}
+			.btns {
+				width: 30%;
+				margin-left: 13%;
+				height: 40px;
+				border: 0;
+				font-size: 14pt;
+				font-family;
+				"微软雅黑";
+				background-color: #FC5628;
+				color: #ffffff;
+				cursor: pointer;
+				/*设置指针鼠标的样式*/
+				border-radius: 20px;
+				/*设置圆角样式*/
+				border: 0;
+			}
+			
+			
+		
+		</style>
+	</head>
+ 
+	<body leftmargin="0" onload="changeImg()">
+		<div class="main_bar">
+		
+				<form action="login.html" onsubmit="return check()">
+				
+						<input type="text" id="vcode" placeholder="验证码" value="验证码" onfocus="this.value=''" onblur="if(this.value=='')this.value='验证码'" /><span id="code" title="看不清，换一张"></span>
+						<div id="search_pass_link">
+							
+						</div>
+						<input type="submit" id="submit" value="登录" class="btns" onmouseover="this.style.backgroundColor='#FF8D00'" onmouseout="this.style.backgroundColor='#FC5628'">
+						
+						<input type="reset"  value="取消" class="btns" onmouseover="this.style.backgroundColor='#FF8D00'" onmouseout="this.style.backgroundColor='#FC5628'">
+				</form>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var code; //声明一个变量用于存储生成的验证码
+		document.getElementById("code").onclick = changeImg;
+ 
+		function changeImg() {
+			var arrays = new Array(
+				'1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
+				'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+				'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
+				'u', 'v', 'w', 'x', 'y', 'z',
+				'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+				'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+				'U', 'V', 'W', 'X', 'Y', 'Z'
+			);
+			code = ''; //重新初始化验证码
+			//alert(arrays.length);
+			//随机从数组中获取四个元素组成验证码
+			for(var i = 0; i < 4; i++) {
+				//随机获取一个数组的下标
+				var r = parseInt(Math.random() * arrays.length);
+				code += arrays[r];
+			}
+			document.getElementById('code').innerHTML = code; //将验证码写入指定区域
+		}
+ 
+		//效验验证码(表单被提交时触发)
+		function check() {
+			//获取用户输入的验证码
+			var input_code = document.getElementById('vcode').value;
+			if(input_code.toLowerCase() == code.toLowerCase()) {
+				//验证码正确(表单提交)
+				return true;
+			}
+			alert("请输入正确的验证码!");
+			//验证码不正确,表单不允许提交
+			return false;
+		}
+ 
+		
+	</script>
+ 
+</html>

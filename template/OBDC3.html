@@ -1,0 +1,177 @@
+<html>
+<title>List Record</title>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+<script src="/static/js/jquery.min.js"></script>
+		<script src="/static/js/config.js"></script>
+		<script src="/static/js/skel.min.js"></script>
+        <script src="/static/js/getid.js"></script>
+		<link rel="stylesheet" href="/static/css/skel-noscript.css" />
+		<link rel="stylesheet" href="/static/css/style.css" />
+		<link rel="stylesheet" href="/static/css/style-desktop.css" />
+
+<head>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>HomePage</title>
+    <meta name="description" content="">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
+    <!-- Icon Fonts -->
+    <link href="../static/fonts/icomoon/style.css" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="../static/js/plugins/highlight/solarized-light.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+
+    <!-- Modernizer -->
+    <script type="text/javascript" src="../static/js/vendor/modernizr-3.3.1.min.js"></script>
+
+
+</style>
+<nav id="nav">
+<!--		<ul>-->
+<!--&lt;!&ndash;			<li><a href =search>User Search</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;            <li><a href =search3>Activity Search</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;			<li><a href = register>Register</a></a></li>&ndash;&gt;-->
+<!--			<li><a href = login>Log in</a></li>-->
+<!--		</ul>-->
+    <ul>
+			<li><a href =index.html>Home</a></li>
+            <li><a></a></li>
+<!--			<li><a href = register>Register</a></li>-->
+            <li><a>Student ID:</a></li>
+			<li><a id = demo href = index.html>studentid</a></li>
+		</ul>
+	</nav>
+</nav>
+</head>
+<!--<body bgcolor="#ffffff" class="bg-repeat">-->
+<body>
+
+
+<svg id="ace-bg-shape-1" class="hidden-sm hidden-xs" height="519" width="758">
+        <polygon points="0,455,693,352,173,0,92,0,0,71" style="fill:#d2d2d2;stroke:purple;stroke-width:0; opacity: 0.5"/>
+    </svg>
+
+    <svg id="ace-bg-shape-2" class="hidden-sm hidden-xs" height="536" width="633">
+        <polygon points="0,0,633,0,633,536" style="fill:#c0e3e7;stroke:purple;stroke-width:0" />
+    </svg>
+
+
+
+<div align="center">
+    <table width="800" border="1" cellpadding="2" cellspacing="1">
+<td colspan="8" align="center"><font face="times new roman"><h1><i>View All Data</i> </h1></font>
+</td>
+    <tr>
+<!--        <td align="center"><b>Choose</b></td>-->
+        <td align="center"><b>加入</b></td>
+        <td align="center"><b>活动id</b></td>
+        <td align="center"><b>活动类型</b></td>
+        <td align="center"><b>最大人数</b></td>
+        <td align="center"><b>最小人数</b></td>
+        <td align="center"><b>开始时间</b></td>
+        <td align="center"><b>结束时间</b></td>
+        <td align="center"><b>地点</b></td>
+        <td align="center"><b>现有人数</b></td>
+
+        <br>
+    </tr>
+        {% for i in jieguo %}
+            <tr>
+<!--                <td align="center"><button id = 'button'  onclick="submit(this)" value ={{ i[0] }}></button></td>-->
+                <td align="center"><button id = 'button2'  onclick="submit2(this)" value ={{ i[0] }} ></button></td>
+                <td align="center">{{ i[0] }}</td>
+                <td align="center">{{ i[1] }}</td>
+                <td align="center">{{ i[2] }}</td>
+                <td align="center">{{ i[3] }}</td>
+                <td align="center">{{ i[4] }}</td>
+                <td align="center">{{ i[5] }}</td>
+                <td align="center">{{ i[6] }}</td>
+                <td align="center">{{ i[7] }}</td>
+                <br>
+            </tr>
+    {% endfor %}
+</td>
+    </table>
+
+
+
+
+<form>
+
+</form>
+<!--    <svg id="ace-bg-shape-1" class="hidden-sm hidden-xs" height="519" width="758">-->
+<!--        <polygon points="0,455,693,352,173,0,92,0,0,71" style="fill:#d2d2d2;stroke:purple;stroke-width:0; opacity: 0.5"/>-->
+<!--    </svg>-->
+
+<!--    <svg id="ace-bg-shape-2" class="hidden-sm hidden-xs" height="536" width="633">-->
+<!--        <polygon points="0,0,633,0,633,536" style="fill:#c0e3e7;stroke:purple;stroke-width:0" />-->
+<!--    </svg>-->
+</div>
+
+
+
+ <script>
+ var x = JSON.parse(localStorage.getItem('a'))
+ function submit(e) {
+     $.ajax({
+         url: "ac_info", /*数据提交到submit处*/
+         type: "POST", /*采用POST方法提交*/
+         data: {"a_id":e.value}, /*提交的数据（json格式），从输入框中获取*/
+ success: function (result) {
+
+     window.location.href = 'ac_info'
+ }
+     })
+ }
+
+  function submit2(e) {
+     // alert(1)这个可以运行
+     $.ajax({
+         url: "OBDC3", /*数据提交到submit处*/
+         type: "POST", /*采用POST方法提交*/
+         data: {"a_id":e.value, "stu_no":JSON.parse(localStorage.getItem('a'))}, /*提交的数据（json格式），从输入框中获取*/
+ success: function (result) {
+     if (result.message === "full") {
+         alert('人满了')
+         window.location.href = 'OBDC3'
+     }
+     else if(result.message==="already"){
+         alert('已经加入该活动')
+     }
+     else {
+         alert('success')
+         window.location.href = 'OBDC3'
+     }
+
+ }
+     })
+ }
+ </script>
+
+
+
+
+
+<script type="text/javascript" src="../static/js/vendor/jquery-1.12.4.min.js"></script>
+<!--<script type="text/javascript" src="http://ditu.google.cn/maps/api/js?key=AIzaSyDiwY_5J2Bkv2UgSeJa4NOKl6WUezSS9XA"></script>-->
+<script type="text/javascript" src="../static/js/plugins/highlight/highlight.pack.js"></script>
+<script type="text/javascript" src="../static/js/plugins/jquery.mCustomScrollbar.min.js"></script>
+<script type="text/javascript" src="../static/js/plugins/isotope.pkgd.min.js"></script>
+<script type="text/javascript" src="../static/js/plugins/progressbar.min.js"></script>
+<script type="text/javascript" src="../static/js/plugins/slick.min.js"></script>
+
+<script type="text/javascript" src="../static/js/options.js"></script>
+<script type="text/javascript" src="../static/js/main.js"></script>
+
+</body>
+</html>

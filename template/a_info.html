@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+    <table width="400" border="1" cellpadding="2" cellspacing="0">
+<td colspan="4" align="center"><font face="times new roman"><h1><i>View All Data</i> </h1></font>
+</td>
+    <tr>
+        <td align="center"><b>Choose</b></td>
+        <td align="center"><b>ID</b></td>
+        <td align="center"><b>姓名</b></td>
+        <td align="center"><b>头像</b></td>
+        <br>
+    </tr>
+        {% for i in jieguo %}
+            <tr>
+                <td align="center"><button id = 'button'  onclick="submit(this)" value ={{ i[0] }}></button></td>
+                <td align="center">{{ i[0] }}</td>
+                <td align="center">{{ i[1] }}</td>
+                <td align="center"><img src={{ i[2] }} style="width: 40px; height: 40px"></td>
+                <br>
+            </tr>
+    {% endfor %}
+</td>
+    </table>
+</center></div>
+</body>
+</html>

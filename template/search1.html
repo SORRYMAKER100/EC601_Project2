@@ -1,0 +1,64 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+<script src="/static/js/jquery.min.js"></script>
+		<script src="/static/js/config.js"></script>
+		<script src="/static/js/skel.min.js"></script>
+        <script src="/static/js/getid.js"></script>
+		<link rel="stylesheet" href="/static/css/skel-noscript.css" />
+		<link rel="stylesheet" href="/static/css/style.css" />
+		<link rel="stylesheet" href="/static/css/style-desktop.css" />
+<head>
+<title>Search Record</title>
+<style type = "text/css">
+.bg-repeat{
+
+background: url(/static/image/113.gif)no-repeat center;
+
+background-size:100% 100%;
+
+
+}
+</style>
+
+<nav id="nav">
+		<ul>
+			<li><a href =search>Search</a></li>
+			<li><a href = register>Register</a></li>
+			<li><a id = demo href = login>studentid</a></li>
+		</ul>
+</nav>
+<br><br><br>
+ <!--引入jQuery包用于使用ajax-->
+ <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+ <h1>请输入你的名字</h1>
+ <br>
+ <!--创建两个input输入框，定义id分别为name,age-->
+ <input type="text" id="search_item" name="search_item" placeholder="学号">
+
+ <!--创建button按钮，点击则激发submit()事件-->
+ <button onclick="submit();">提交</button>
+ <script>
+ /*在这里编写submit()事件*/
+ function submit() {
+ $.ajax({
+ url: "search", /*数据提交到submit处*/
+ type: "POST", /*采用POST方法提交*/
+ data: { "search_item":$("#search_item").val()}, /*提交的数据（json格式），从输入框中获取*/
+ success: function (result) {
+  if (result.message === "fail") {
+  alert('未找到查询对象')
+  }
+  else if(result.message==="success"){
+  	alert(result.message)
+  localStorage.setItem('b',$("#search_item").val())
+  window.location.href = 'OBDC'
+  }
+  else{
+   alert("success")
+	  window.location.href = 'OBDC'
+  }
+ }
+ });
+ }
+ </script>
+</html>

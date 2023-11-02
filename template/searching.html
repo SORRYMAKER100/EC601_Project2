@@ -1,0 +1,412 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="ace ace-card-on ace-tab-nav-on ace-main-nav-on ace-sidebar-on" data-theme-color="#c0e3e7">
+<head>
+    <script src="/static/js/config.js"></script>
+    <script src="/static/js/skel.min.js"></script>
+    <script src="/static/js/getid.js"></script>
+
+
+    <link rel="stylesheet" href="/static/css/skel-noscript.css"/>
+    <link rel="stylesheet" href="/static/css/style.css"/>
+    <link rel="stylesheet" href="/static/css/style-desktop.css"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Ace</title>
+    <meta name="description" content="">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
+    <!-- Icon Fonts -->
+    <link href="../static/fonts/icomoon/style.css" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="../static/js/plugins/highlight/solarized-light.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+
+    <!-- Modernizer -->
+    <script type="text/javascript" src="../static/js/vendor/modernizr-3.3.1.min.js"></script>
+</head>
+<body>
+<div class="ace-wrapper">
+    <header id="ace-header" class="ace-container-shift ace-logo-in ace-head-boxed ace-nav-right">
+        <div class="ace-head-inner">
+            <div class="ace-head-container ace-container">
+                <div class="ace-head-row">
+                    <div id="ace-head-col1" class="ace-head-col text-left">
+                        <a id="ace-logo" class="ace-logo" href="index.html">
+                            <img src="../static/img/uploads/brand/logo.svg" alt="ace resume"><span>Meet</span>
+                        </a>
+                    </div>
+
+                    <div id="ace-head-col2" class="ace-head-col text-right">
+                        <div class="ace-nav-container ace-container hidden-sm hidden-xs">
+                            <nav id="ace-main-nav">
+                                <ul class="clear-list">
+                                    <li><a href="index.html">Home</a></li><!--主页-->
+                                    <li><a href="portfolio.html">portfolio</a><!--图片牛逼界面-->
+                                    <li><a href="testimonials.html">Audit</a></li><!--管理员审核界面-->
+                                    <li><a href="search.html">Create</a></li><!--这个创建界面-->
+                                    <li><a href="category.html">Activities</a></li><!--活动页面-->
+                                    <li><a href="searching.html">Search</a></li><!--搜索界面-->
+                                    <li><a href="contact.html">contact</a></li><!--联系我们，功能之外的-->
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div id="ace-head-col3" class="ace-head-col text-right">
+                        <button id="ace-sidebar-btn" class="btn btn-icon btn-light btn-shade">
+                            <span class="ace-icon ace-icon-side-bar-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div><!-- .ace-container -->
+        </div><!-- .ace-head-inner -->
+    </header><!-- #ace-header -->
+
+
+    <!--        <nav id="ace-nav-sm" class="ace-nav hidden-lg hidden-md">-->
+    <!--            <ul class="clear-list">-->
+    <!--				<li>-->
+    <!--					<a href="index.html" data-tooltip="Home"><img class="avatar avatar-42" src="../static/img/uploads/avatar/avatar-42x42.png" alt=""></a>-->
+    <!--				</li>-->
+    <!--				<li>-->
+    <!--					<a href="experience.html" data-tooltip="Experience"><span class="ace-icon ace-icon-experience"></span></a>-->
+    <!--				</li>-->
+    <!--				<li>-->
+    <!--					<a href="portfolio.html" data-tooltip="Portfolio"><span class="ace-icon ace-icon-portfolio"></span></a>-->
+    <!--				</li>-->
+    <!--				<li>-->
+    <!--					<a href="testimonials.html" data-tooltip="References"><span class="ace-icon ace-icon-references"></span></a>-->
+    <!--				</li>-->
+    <!--				<li>-->
+    <!--					<a href="contact.html" data-tooltip="Contact"><span class="ace-icon ace-icon-contact"></span></a>-->
+    <!--				</li>-->
+    <!--				<li>-->
+    <!--					<a href="category.html" data-tooltip="Blog"><span class="ace-icon ace-icon-blog"></span></a>-->
+    <!--				</li>-->
+    <!--			</ul>-->
+    <!--        </nav>&lt;!&ndash; #ace-tab-nav-sm &ndash;&gt;-->
+
+    <!--        <article id="ace-card" class="ace-card bg-primary">-->
+    <!--			<div class="ace-card-inner text-center">-->
+    <!--				<img class="avatar avatar-195" src="../static/img/uploads/avatar/avatar-195x195.png" width="195" height="195" alt="">-->
+    <!--				<h1>Ola Lowe</h1>-->
+    <!--				<p class="text-muted">Florist | Decorator</p>-->
+    <!--				<ul class="ace-social clear-list">-->
+    <!--					<li><a><span class="ace-icon ace-icon-facebook"></span></a></li>-->
+    <!--					<li><a><span class="ace-icon ace-icon-twitter"></span></a></li>-->
+    <!--					<li><a><span class="ace-icon ace-icon-google-plus"></span></a></li>-->
+    <!--					<li><a><span class="ace-icon ace-icon-instagram"></span></a></li>-->
+    <!--					<li><a><span class="ace-icon ace-icon-pinterest"></span></a></li>-->
+    <!--				</ul>-->
+    <!--			</div>-->
+
+    <!--			<footer class="ace-card-footer">-->
+    <!--				<a class="btn btn-lg btn-block btn-thin btn-upper " href="#">Download Resume</a>-->
+    <!--			</footer>-->
+    <!--		</article>&lt;!&ndash; #ace-card &ndash;&gt;-->
+
+    <!--        <div id="ace-content" class="ace-container-shift">-->
+    <!--            <div class="ace-container">-->
+
+    <!--                -->
+    <!--                    <div id="ace-nav-wrap" class="hidden-sm hidden-xs">-->
+    <!--                        <div class="ace-nav-cont">-->
+    <!--                            <div id="ace-nav-scroll">-->
+    <!--                                <nav id="ace-nav" class="ace-nav">-->
+    <!--                                    <ul class="clear-list">-->
+    <!--										<li>-->
+    <!--											<a href="index.html" data-tooltip="Home"><img class="avatar avatar-42" src="../static/img/uploads/avatar/avatar-42x42.png" alt=""></a>-->
+    <!--										</li>-->
+    <!--										<li>-->
+    <!--											<a href="experience.html" data-tooltip="Experience"><span class="ace-icon ace-icon-experience"></span></a>-->
+    <!--										</li>-->
+    <!--										<li>-->
+    <!--											<a href="portfolio.html" data-tooltip="Portfolio"><span class="ace-icon ace-icon-portfolio"></span></a>-->
+    <!--										</li>-->
+    <!--										<li>-->
+    <!--											<a href="testimonials.html" data-tooltip="References"><span class="ace-icon ace-icon-references"></span></a>-->
+    <!--										</li>-->
+    <!--										<li>-->
+    <!--											<a href="contact.html" data-tooltip="Contact"><span class="ace-icon ace-icon-contact"></span></a>-->
+    <!--										</li>-->
+    <!--										<li>-->
+    <!--											<a href="category.html" data-tooltip="Blog"><span class="ace-icon ace-icon-blog"></span></a>-->
+    <!--										</li>-->
+    <!--									</ul>-->
+    <!--                                </nav>-->
+    <!--                            </div>-->
+
+    <!--                            <div id="ace-nav-tools" class="hidden">-->
+    <!--                                <span class="ace-icon ace-icon-dots-three-horizontal"></span>-->
+
+    <!--                                <button id="ace-nav-arrow" class="clear-btn">-->
+    <!--                                    <span class="ace-icon ace-icon-chevron-thin-down"></span>-->
+    <!--                                </button>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="ace-nav-btm"></div>-->
+    <!--                    </div>&lt;!&ndash; .ace-nav-wrap &ndash;&gt;-->
+
+    <!--                <div class="ace-paper-stock">-->
+    <!--                    <main class="ace-paper clearfix">-->
+    <!--                        <div class="ace-paper-cont clear-mrg">-->
+
+
+    <nav id="ace-nav-sm" class="ace-nav hidden-lg hidden-md">
+        <ul class="clear-list">
+            <li><!--我猜这一片是用来点的按钮吧
+				data-tooltip是一种提示工具嗯-->
+                <a href="index.html" data-tooltip="Home"><img class="avatar avatar-42"
+                                                              src="../static/img/uploads/avatar/avatar-qq1.jpg" alt=""></a>
+                <!--这个是上面的左边的小头像-->
+            </li>
+            <li>
+                <a href="experience.html" data-tooltip="Experience"><span
+                        class="ace-icon ace-icon-experience"></span></a>
+            </li>
+            <li>
+                <a href="portfolio.html" data-tooltip="Activity"><span class="ace-icon ace-icon-portfolio"></span></a>
+            </li>
+            <li>
+                <a href="testimonials.html" data-tooltip="References"><span class="ace-icon ace-icon-references"></span></a>
+            </li>
+            <li>
+                <a href="contact.html" data-tooltip="Contact"><span class="ace-icon ace-icon-contact"></span></a>
+            </li>
+            <li>
+                <a href="category.html" data-tooltip="Blog"><span class="ace-icon ace-icon-blog"></span></a>
+            </li>
+        </ul>
+    </nav><!-- #ace-tab-nav-sm -->
+
+    <!--         这一片就是中间的那块儿啦！-->
+    <article id="ace-card" class="ace-card bg-primary">
+        <div class="ace-card-inner text-center">
+            <!--这里的图片是大图了-->
+            <img class="avatar avatar-195" src="../static/img/uploads/avatar/avatar-qq1.jpg" width="195" height="195"
+                 alt="">
+            <h1>{{stuid}}</h1>
+            <!--            这是get姓名
+                            下面可以放签名-->
+            <p class="text-muted">Hogwarts | Gryffindor</p>
+            <!--                这里可以的话之后改一下字体吧，他的字体好丑好丑啊-->
+            <ul class="ace-social clear-list">
+                <li><a><span class="ace-icon ace-icon-facebook"></span></a></li>
+                <li><a><span class="ace-icon ace-icon-twitter"></span></a></li>
+                <li><a><span class="ace-icon ace-icon-google-plus"></span></a></li>
+                <li><a><span class="ace-icon ace-icon-instagram"></span></a></li>
+                <li><a><span class="ace-icon ace-icon-pinterest"></span></a></li>
+            </ul>
+        </div>
+
+        <footer class="ace-card-footer">
+            <a class="btn btn-lg btn-block btn-thin btn-upper " href="index.html">Home Page</a>
+        </footer>
+    </article><!-- #ace-card -->
+
+    <div id="ace-content" class="ace-container-shift">
+        <div class="ace-container">
+            <div id="ace-nav-wrap" class="hidden-sm hidden-xs">
+                <div class="ace-nav-cont">
+                    <div id="ace-nav-scroll">
+                        <nav id="ace-nav" class="ace-nav">
+                            <ul class="clear-list">
+                                <li>
+                                    <!--                                            页面右边的图片-->
+                                    <a href="index.html" data-tooltip="Home"><img class="avatar avatar-42"
+                                                                                  src="../static/img/uploads/avatar/avatar-qq1.jpg"
+                                                                                  alt=""></a>
+                                </li>
+                                <li>
+                                    <a href="experience.html" data-tooltip="Experience"><span
+                                            class="ace-icon ace-icon-experience"></span></a>
+                                </li>
+                                <!--										<li>-->
+                                <!--											<a href="portfolio.html" data-tooltip="Portfolio"><span class="ace-icon ace-icon-portfolio"></span></a>-->
+                                <!--										</li>-->
+                                <li>
+                                    <a href="testimonials.html" data-tooltip="Audit"><span
+                                            class="ace-icon ace-icon-references"></span></a>
+                                </li>
+                                <li>
+                                    <a href="contact.html" data-tooltip="Contact"><span
+                                            class="ace-icon ace-icon-contact"></span></a>
+                                </li>
+                                <li>
+                                    <a href="category.html" data-tooltip="Activities"><span
+                                            class="ace-icon ace-icon-blog"></span></a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div id="ace-nav-tools" class="hidden">
+                        <span class="ace-icon ace-icon-dots-three-horizontal"></span>
+
+                        <button id="ace-nav-arrow" class="clear-btn">
+                            <span class="ace-icon ace-icon-chevron-thin-down"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="ace-nav-btm"></div>
+            </div><!-- .ace-nav-wrap -->
+
+            <div class="ace-paper-stock">
+                <main class="ace-paper clearfix">
+                    <div class="ace-paper-cont clear-mrg">
+
+                        <!-- START: PAGE CONTENT -->
+
+                        <div class="padd-box-sm">
+                            <!--        <header class="search-for">-->
+                            <!--			<h1 class="search-title">search people you know:</h1>-->
+                            <!--&lt;!&ndash;            <span>Lorem ipsum</span></h1>&ndash;&gt;-->
+                            <!--        </header>-->
+
+<!--                            搜索用户-->
+                            <div class="search-result">
+                                <strong class="title-lg text-upper">Search user</strong>
+                                <form class="search-again">
+                                    <div class="form-item-wrap">
+                                        <input class="form-item" id="search_User" name="search_User" type="search"
+                                               placeholder="Search by ID" value="" size="30" maxlength="80"
+                                               required="required">
+                                    </div>
+                                    <div class="form-submit form-item-wrap">
+                                        <!--                    <input class="btn btn-primary" name="submit" type="submit" id="submit" value="Try Again">-->
+<!--                                        <button onclick="search_User();">提交</button>-->
+
+                                    </div>
+                                </form>
+                                <button class="btn btn-primary" onclick="search_User();">提交</button>
+                            </div>
+
+                            <br><br><br>
+<!--                            搜索活动-->
+                            <div class="search-result">
+                                <strong class="title-lg text-upper">Search Activity</strong>
+                                <form class="search-again">
+                                    <div class="form-item-wrap">
+                                        <input class="form-item" id="search_AC" name="search_AC" type="search"
+                                               placeholder="Search by Destination/Type/Start Time" value="" size="30" maxlength="80"
+                                               required="required">
+                                    </div>
+                                    <div class="form-submit form-item-wrap">
+                                        <!--                    <input class="btn btn-primary" name="submit" type="submit" id="submit" value="Try Again">-->
+<!--                                        <button onclick="search_User();">提交</button>-->
+
+                                    </div>
+                                </form>
+                                <button class="btn btn-primary" onclick="search_AC();">提交</button>
+                            </div>
+
+
+                        </div>
+
+                        <!-- END: PAGE CONTENT -->
+
+                    </div><!-- .ace-paper-cont -->
+                </main><!-- .ace-paper -->
+            </div><!-- .ace-paper-stock -->
+
+        </div><!-- .ace-container -->
+    </div><!-- #ace-content -->
+
+
+
+    <!--    <footer id="ace-footer" class="ace-container-shift">-->
+    <!--        <div class="ace-container">-->
+    <!--            <div class="ace-footer-cont clear-mrg">-->
+    <!--                <p class="text-center">Copyright &copy; 2017.Company name All rights reserved.//cdn.bootcss.com/jquery/1.12.2/jquery.min.js</p>-->
+    <!--            </div>-->
+    <!--        </div>&lt;!&ndash; .ace-container &ndash;&gt;-->
+    <!--    </footer>&lt;!&ndash; #ace-footer &ndash;&gt;-->
+
+    <!-- Triangle Shapes -->
+    <svg id="ace-bg-shape-1" class="hidden-sm hidden-xs" height="519" width="758">
+        <polygon points="0,455,693,352,173,0,92,0,0,71"
+                 style="fill:#d2d2d2;stroke:purple;stroke-width:0; opacity: 0.5"/>
+    </svg>
+
+    <svg id="ace-bg-shape-2" class="hidden-sm hidden-xs" height="536" width="633">
+        <polygon points="0,0,633,0,633,536" style="fill:#c0e3e7;stroke:purple;stroke-width:0"/>
+    </svg>
+</div><!-- .ace-wrapper -->
+
+<!-- Scripts -->
+<script type="text/javascript" src="../static/js/vendor/jquery-1.12.4.min.js"></script>
+
+<script>
+    /*在这里编写submit()事件*/
+    function search_User() {
+
+        $.ajax({
+            url: "searchuser", /*数据提交到submit处*/
+            type: "POST", /*采用POST方法提交*/
+            data: {"search_User": $("#search_User").val()}, /*提交的数据（json格式），从输入框中获取*/
+            success: function (result) {
+                if (result.message === "fail") {
+                    alert('未找到查询对象')
+                } else if (result.message === "success") {
+                    alert(result.message)
+                    //    下面的setItem
+                    localStorage.setItem('b', $("#search_User").val())
+                    window.location.href = 'OBDC'
+                } else {
+                    alert("success")
+                    window.location.href = 'OBDC'
+                }
+            }
+        });
+    }
+</script>
+<!--搜索用户的方法-->
+
+
+<script>
+    /*在这里编写submit()事件*/
+    function search_AC() {
+
+        $.ajax({
+            url: "search_AC", /*数据提交到submit处*/
+            type: "POST", /*采用POST方法提交*/
+            data: {"search_AC": $("#search_AC").val()}, /*提交的数据（json格式），从输入框中获取*/
+            success: function (result) {
+                if (result.message === "fail") {
+                    alert('未找到查询对象')
+                } else if (result.message === "success") {
+                    alert(result.message)
+                    //    下面的setItem
+                    localStorage.setItem('b', $("#search_AC").val())
+                    window.location.href = 'OBDC3'
+                } else {
+                    alert("success")
+                    window.location.href = 'OBDC3'
+                }
+            }
+        });
+    }
+</script>
+<!--搜索活动的方法-->
+
+<!--<script type="text/javascript" src="http://ditu.google.cn/maps/api/js?key=AIzaSyDiwY_5J2Bkv2UgSeJa4NOKl6WUezSS9XA"></script>-->
+<script type="text/javascript" src="../static/js/plugins/highlight/highlight.pack.js"></script>
+<script type="text/javascript" src="../static/js/plugins/jquery.mCustomScrollbar.min.js"></script>
+<script type="text/javascript" src="../static/js/plugins/isotope.pkgd.min.js"></script>
+<script type="text/javascript" src="../static/js/plugins/progressbar.min.js"></script>
+<script type="text/javascript" src="../static/js/plugins/slick.min.js"></script>
+
+<script type="text/javascript" src="../static/js/options.js"></script>
+<script type="text/javascript" src="../static/js/main.js"></script>
+</body>
+</html>
+

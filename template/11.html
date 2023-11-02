@@ -1,0 +1,51 @@
+{% extends "12.html" %}
+
+{% block title %}首页{% endblock %}
+
+{% block page_content %}
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <table class="table table-bordered">
+    <tr>你管理的活动
+        <th>活动类别</th>
+        <th>活动ID</th>
+        <th>参与者ID</th>
+        <th>活动简介</th>
+        <th>用户姓名</th>
+        <th>所属公司</th>
+    </tr>
+        {% for i in u %}
+            <tr>
+                <td id="user_id">{{ i[0] }}</td>
+                <td id="activity_id">{{ i[1] }}</td>
+                <td>{{ i[2] }}</td>
+                <td>{{ i[3] }}</td>
+                <td>{{ i[4] }}</td>
+                <td>{{ i[5] }}</td>
+                <td>{{ i[6] }}</td>
+                <td><button  onclick="shenhe();">通过</button>
+                <script>
+        /*在这里编写submit()事件*/
+        function shenhe(e) {
+            var user_id=document.getElementById('user_id').innerHTML
+            var activity_id=document.getElementById('activity_id').innerHTML
+            $.ajax({
+                url: "shenhe", /*数据提交到submit处*/
+                type: "POST",  /*采用POST方法提交*/
+                data: { "user": user_id,"activity":activity_id},  /*提交的数据（json格式），从输入框中获取*/
+                /*result为后端函数返回的json*/
+                success: function (result) {
+                    if (result.message == "success!") {
+                        alert(result.message+"你的名字是"+result.name)
+                    }
+                    else {
+                        alert(result.message)
+                    }
+                }
+            });
+        }
+    </script></td>
+            </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}

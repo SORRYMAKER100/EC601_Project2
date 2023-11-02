@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<!-- <head> -->
+<!-- <script type="text/javascript" src="/static/js/activityList.js"></script> -->
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<title>ActivityList</title>
+
+<head>
+    <center>
+        <h3>请输入你想查看的活动名称</h3>
+        <input type="text" id="activity_name" name="activity_name" placeholder="活动名称">
+        <button onclick="submit();">提交</button>
+    </center>
+    <link rel="stylesheet" type="text/css" href="/static/css/learn.css" />
+</head>
+
+<body  onload="initial()">
+  <!-- initial方法用来在开始就显示出数据库里的表单信息 -->
+  <table id = "myTable">
+      <caption id="a">
+        <h2>Activity List</h2>
+      </caption>
+      <tr>
+        <!-- <th id = "ACID">Activity ID</th> -->
+        <th id = "TYPE">Type</th>
+        <th id = "Max_Participantes">Max_Participantes</th>
+        <th id = "Pre_Participantes">Pre_Participantes</th>
+        <th id = "Min_Participantes">Min_Participantes</th>
+        <th>Destination</th>
+        <th>Start Date</th>
+        <th>Finish Date</th>
+        <th>Apply DDL</th>
+        <th>Action</th>
+      </tr>
+      <tbody id="tbody" style="display: none">
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>          
+          <td></td>
+          <td></td>
+          <td><input type="button" value="Attend" onclick="attend_activity(this)" /></td>
+          <!-- 这里留了个buttom的方法写，加入活动通过这个button实现 -->
+        </tr>
+      </tbody>
+    </table>
+
+</body>
+
+
+</html>
+
+
+
+<script>
+  function deleteItem(r){
+    var i =r.parentNode.parentNode.rowIndex
+    document.getElementById('myTable').deleteRow(i)
+  }
+
+  
+
+  function attend_activity(val){
+    var value = $(val).parent().parent().find("td");//这里选中了按钮所对应的这一行
+    // console.log(value.eq(2).text());
+    PRENO = value.eq(2).text();//这里选取了该行第三列的数据，到时候将需要比较的在这里比较就好了
+    MAXNO = value.eq(1).text();//这里同上
+    var my_message = confirm("您确认加入该活动吗？")
+    if(my_message==true){//先判断一下现有人数是不是比最大人数要小
+      if(PRENO<MAXNO){
+      // join_sql = ""这里加一个加入成功的sql语句就好啦！
+
+      sql1 = "insert into Project.relationgship(stu_id,a_id,state) values ('s','s','d') %( ,as2,1)"
+
+      alert("加入成功，请在DDL时确认是否成行")
+      }else{
+      alert("人员已满，无法加入")
+      }
+      // 如果人数已满，提示人数已满
+    }else{
+      // 因为取消了嘛，就啥也不做直接返回
+    }
+  }
+
+
+
+
+    // function submit() {//这里的方法名是对应的标签中的属性
+    //     $.ajax({
+    //         url: "submit", /*数据提交到submit处，这里的submit对应的是路由地址*/
+    //         type: "POST", /*采用POST方法提交*/
+    //         data: {"activity_name": $("#activity_name").val()}, /*提交的数据（json格式），从输入框中获取*/
+    //         /*result为后端函数返回的json*/
+    //         success: function (result) {
+    //             if (result.message == "success!") {
+    //                 alert(result.message + "活动最小人数是" + result.min_attender)//这里的result就用来和后端链接
+    //             } else {
+    //                 alert(result.message)
+    //             }
+    //         }
+    //     });
+    // }
+
+    
+
+    function initial() {
+      console.log('1')
+      $.ajax({
+        url:"initial",
+        type:"GET",
+        dataType:"json",
+        success: function(result){
+          
+          if(result==null || result==''){
+            alert("Please contact\n manager to maintain the data")
+          }else{
+            row_num = result.result.TYPE.length;
+            // alert(row_num)
+          for (let i=0; i <row_num; i++){  
+            
+            let bodyObj = document.getElementById("tbody");
+            
+            if (!bodyObj) {
+              alert("Body of Table not Exist!");
+              return;
+           }
+           let rowCount = bodyObj.rows.length;
+           let cellCount = bodyObj.rows[0].cells.length;
+           bodyObj.style.display = "";
+            let newRow = bodyObj.insertRow(rowCount++);
+            newRow.insertCell(0).innerHTML = result.result.TYPE[i];
+            newRow.insertCell(1).innerHTML = result.result.Max_Participantes[i];
+            newRow.insertCell(2).innerHTML = result.result.Pre_Participantes[i];
+            newRow.insertCell(3).innerHTML = result.result.Min_Participantes[i];
+            newRow.insertCell(4).innerHTML = result.result.Destination[i];
+            newRow.insertCell(5).innerHTML = result.result.Start_Date[i];
+            newRow.insertCell(6).innerHTML = result.result.Finish_Date[i];
+            newRow.insertCell(7).innerHTML = result.result.Apply_DDL[i];
+            newRow.insertCell(8).innerHTML =
+            bodyObj.rows[0].cells[cellCount - 1].innerHTML;
+            bodyObj.rows[0].style.display = "none"; // hide first row
+  // copy the "delete" button
+          }
+
+            
+          }
+        }
+      }
+      )
+}
+</script>
+
+
+
+
+
+<!--    输入一个东西后搜索出来的东西-->
+

@@ -1,0 +1,97 @@
+<html>
+ <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+ <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<script src="../static/js/jquery.min.js"></script>
+		<script src="../static/js/config.js"></script>
+		<script src="../static/js/skel.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../static/css/skel-noscript.css" />
+		<link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../static/css/style-desktop.css" />
+<body>
+ <h1>请输入你的名字</h1>
+  <nav id="nav">
+		<ul>
+			<li><a href = register style="font-size: 40px">Register</a></li>
+			<li><a id = demo href = login style="font-size: 40px">log in</a></li>
+		</ul>
+</nav>
+ <br>
+ <!--创建两个input输入框，定义id分别为name,age-->
+
+<h2  style="text-align: center; font-size: 50px">Log In </h2>
+
+ <input type="text" id="stu_id" name="stu_id" placeholder="学号" style="text-align: center;
+    height: 60px;
+    width: 500px;
+	border-radius: 20px;
+    margin: 100px auto;
+    border:thin solid black;
+">
+
+ <input type="password" id="password" name="password" placeholder="密码" style="text-align: center;
+    height: 60px;
+    width: 500px;
+    border-radius: 20px;
+    margin: 100px auto;
+    border:thin solid black;">
+
+ <!--创建button按钮，点击则激发submit()事件-->
+ <button class="btn btn-primary" onclick="submit();"style="height: 60px;
+    width: 100px;
+    margin: 100px auto;-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	display: -webkit-flex;
+
+			/*display: flex;*/
+	justify-content: center;">提交</button>
+
+
+ <svg id="ace-bg-shape-1" class="hidden-sm hidden-xs" height="519" width="758">
+        <polygon points="0,455,693,352,173,0,92,0,0,71" style="fill:#d2d2d2;stroke:purple;stroke-width:0; opacity: 0.5"/>
+    </svg>
+
+    <svg id="ace-bg-shape-2" class="hidden-sm hidden-xs" height="536" width="633">
+        <polygon points="0,0,633,0,633,536" style="fill:#c0e3e7;stroke:purple;stroke-width:0" />
+    </svg>
+ <script>
+
+ function submit() {
+
+ $.ajax({
+ url: "login", /*数据提交到submit处*/
+ type: "POST", /*采用POST方法提交*/
+ data: { "stu_id":$("#stu_id").val(),"password":$("#password").val()}, /*提交的数据（json格式），从输入框中获取*/
+ success: function (result) {
+  if (result.message ==="manager"){
+      alert('welcome')
+      window.location.href = 'manager'
+  }
+
+  else if (result.message === "fail") {
+  alert('账号或密码错误')
+  }
+  else if(result.message==="success"){
+  alert("没有这个用户")
+  }
+  else{
+   alert("success")
+   localStorage.setItem('a',$("#stu_id").val())
+   window.location.href = 'index.html'}
+ }
+ });
+ }
+ </script>
+
+<script type="text/javascript" src="../static/js/vendor/jquery-1.12.4.min.js"></script>
+<!--<script type="text/javascript" src="http://ditu.google.cn/maps/api/js?key=AIzaSyDiwY_5J2Bkv2UgSeJa4NOKl6WUezSS9XA"></script>-->
+<script type="text/javascript" src="../static/js/plugins/highlight/highlight.pack.js"></script>
+<script type="text/javascript" src="../static/js/plugins/jquery.mCustomScrollbar.min.js"></script>
+<script type="text/javascript" src="../static/js/plugins/isotope.pkgd.min.js"></script>
+<script type="text/javascript" src="../static/js/plugins/progressbar.min.js"></script>
+<script type="text/javascript" src="../static/js/plugins/slick.min.js"></script>
+
+<script type="text/javascript" src="../static/js/options.js"></script>
+<script type="text/javascript" src="../static/js/main.js"></script>
+</body>
+</html>

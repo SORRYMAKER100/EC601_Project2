@@ -1,0 +1,95 @@
+<html>
+<title>List Record</title>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+<script src="/static/js/jquery.min.js"></script>
+		<script src="/static/js/config.js"></script>
+		<script src="/static/js/skel.min.js"></script>
+        <script src="/static/js/getid.js"></script>
+		<link rel="stylesheet" href="/static/css/skel-noscript.css" />
+		<link rel="stylesheet" href="/static/css/style.css" />
+		<link rel="stylesheet" href="/static/css/style-desktop.css" />
+<html>
+<head>
+
+
+<style type = "text/css">
+.bg-repeat{
+
+background: url(/static/image/111.jpg)no-repeat center;
+
+background-size:cover;
+
+
+
+}
+</style>
+    <nav id="nav">
+		<ul>
+			<li><a href = search2>Search</a></li>
+			<li><a id = demo href = login>manager</a></li>
+		</ul>
+</nav>
+</head>
+<body bgcolor="#ffffff" class="bg-repeat">
+<br>
+<br>
+
+<div align="center">
+    <table width="400" border="1" cellpadding="2" cellspacing="0">
+<td colspan="4" align="center"><font face="times new roman"><h1><i>View All Data</i> </h1></font>
+</td>
+    <tr>
+        <td align="center"><b>pass</b></td>
+        <td align="center"><b>fail</b></td>
+        <td align="center"><b>姓名</b></td>
+        <td align="center"><b>头像</b></td>
+
+        <br>
+    </tr>
+        {% for i in jieguo %}
+            <tr>
+                <td align="center"><button id = 'button'  onclick="submit(this)" value ={{ i[0] }}></button></td>
+                <td align="center"><button id = 'button2'  onclick="submit2(this)" value ={{ i[0] }}></button></td>
+                <td align="center">{{ i[0] }}</td>
+                <td align="center">{{ i[1] }}</td>
+                <br>
+            </tr>
+    {% endfor %}
+</td>
+    </table>
+</center></div><!-- This is inserted for the sample only -->
+
+<div align="center"><a href =a_info>Activity information</a> | <a href =update_record_jerrel.asp> Update members</a> | <a href =delete_record_jerrel.asp> Delete members</a> |<a href =search_record_jerrel.asp>Search members</a>
+</div>
+<br>
+<br>
+<form>
+  <div align="center"><center><p><input type="button" value="Close This Window"
+  onClick="window.close()"> </p>
+  </center></div>
+</form>
+ <script>
+ var x = JSON.parse(localStorage.getItem('a'))
+ function submit(e) {
+     $.ajax({
+         url: "pas", /*数据提交到submit处*/
+         type: "POST", /*采用POST方法提交*/
+         data: {"pas": e.value}, /*提交的数据（json格式），从输入框中获取*/
+ success: function () {
+     window.location.href = 'manager'
+ }
+     })
+ }
+  function submit2(e) {
+     $.ajax({
+         url: "dele", /*数据提交到submit处*/
+         type: "POST", /*采用POST方法提交*/
+         data: {"dele": e.value}, /*提交的数据（json格式），从输入框中获取*/
+ success: function () {
+     window.location.href = 'manager'
+ }
+     })
+ }
+ </script>
+</body>
+</html>
