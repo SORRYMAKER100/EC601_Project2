@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Route Planner and Street View Display</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .control-panel {
+            padding: 20px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            width: 100%;
+            text-align: center;
+        }
+        #map, #pano {
+            height: 50vh;
+            width: 100%;
+        }
+        .controls {
+            width: 30%;
+            padding: 10px;
+            margin: 10px 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button, select {
+            padding: 10px 15px;
+            border-radius: 4px;
+            margin: 10px 5px;
+            width: calc(30% - 20px);
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        select {
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="control-panel">
+        <input id="start" class="controls" type="text" placeholder="Enter Starting Point">
+        <input id="end" class="controls" type="text" placeholder="Enter Destination">
+        <select id="mode" class="controls">
+            <option value="DRIVING">Car</option>
+            <option value="WALKING">Walking</option>
+            <option value="BICYCLING">Bicycle</option>
+            <option value="TRANSIT">Public Transport</option>
+        </select>
+        <button onclick="planRoute()">Plan Route</button>
+        <button onclick="useCurrentLocation()">Use My Location</button>
+    </div>
+    <div id="map"></div>
+    <div id="pano"></div>
+
+    <!-- Replace YOUR_API_KEY with your actual Google Maps API key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBz2WqitYX9eYjhKqS8EdMLLr_45cmDT5g&libraries=places&callback=initMapAndAutocomplete"
+    async defer></script>
+    <script src="script.js"></script>
+</body>
+</html>
