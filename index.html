@@ -4,6 +4,7 @@
     <title>Route Planner and Street View Display</title>
     <style>
         body, html {
+            height: 180%;
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
@@ -12,13 +13,17 @@
             padding: 20px;
             background-color: #f8f9fa;
             box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-            width: 100%;
             text-align: center;
         }
-        #map, #pano {
-            height: 50vh;
+        #map {
+            height: 80vh; /* Adjusted to allow space for recommendations */
             width: 100%;
         }
+        #pano {
+            height: 100vh;
+            width: 100%;
+        }
+
         .controls {
             width: 30%;
             padding: 10px;
@@ -26,23 +31,29 @@
             border: 1px solid #ddd;
             border-radius: 4px;
         }
-        button, select {
-            padding: 10px 15px;
-            border-radius: 4px;
-            margin: 10px 5px;
-            width: calc(30% - 20px);
-        }
         button {
+            padding: 10px 15px;
             background-color: #007bff;
             color: white;
             border: none;
+            border-radius: 4px;
             cursor: pointer;
         }
         button:hover {
             background-color: #0056b3;
         }
-        select {
-            border: 1px solid #ddd;
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+        }
+        li:hover {
+            background-color: #e9ecef;
         }
     </style>
 </head>
@@ -50,17 +61,21 @@
     <div class="control-panel">
         <input id="start" class="controls" type="text" placeholder="Enter Starting Point">
         <input id="end" class="controls" type="text" placeholder="Enter Destination">
+        <input id="radius" class="controls" type="number" placeholder="Radius in km" min="1" max="50">
         <select id="mode" class="controls">
-            <option value="DRIVING">Car</option>
+            <option value="DRIVING">Driving</option>
             <option value="WALKING">Walking</option>
             <option value="BICYCLING">Bicycle</option>
             <option value="TRANSIT">Public Transport</option>
         </select>
         <button onclick="planRoute()">Plan Route</button>
-        <button onclick="useCurrentLocation()">Use My Location</button>
     </div>
     <div id="map"></div>
     <div id="pano"></div>
+    <div id="recommendations-panel">
+    <h3>Nearby Attractions:</h3>
+     <ul id="recommendations"></ul>
+    </div>
 
     <!-- Replace YOUR_API_KEY with your actual Google Maps API key -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBz2WqitYX9eYjhKqS8EdMLLr_45cmDT5g&libraries=places&callback=initMapAndAutocomplete"
