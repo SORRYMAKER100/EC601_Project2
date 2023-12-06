@@ -56,25 +56,25 @@ Ensuring data protection and user privacy.# EC601_Project2
 When you first access the web you can choose Register, Log in or Search
  ![image](https://github.com/SORRYMAKER100/EC601_Project2/assets/91243357/0bd8d1ae-041e-4cbd-9240-2e25dced2134)
  
-This is the Log in interface
+This is the Log in interface, when you log in we will check the database to make sure your account number is existed and your password is correct.
  ![image](https://github.com/SORRYMAKER100/EC601_Project2/assets/91243357/11c0c8ff-c49d-4de5-8999-7a3e7eaa859e)
  
-This is the Register interface
+This is the Register interface, if someinformation is missed the web will remind you to fill and the password must longer than 8 but shorter than 16.
  ![image](https://github.com/SORRYMAKER100/EC601_Project2/assets/91243357/b5a85eb5-cf59-4911-bee8-844966d60d3a)
  
-This is the home page of user
+This is the home page of user. We will get your information from the database and show some of them in your homepage.
  ![image](https://github.com/SORRYMAKER100/EC601_Project2/assets/91243357/a8dfb5fb-de01-4ef6-b4c0-9fdf7f84146a)
  
-You can choose Create to create new activity.
+You can choose Create to create new activity. The start time should earlier than the end time. The maxinum must larger than the mininum. And you need to fill all the information, otherwise, the web will send you a message to remind you to fill.
  ![image](https://github.com/SORRYMAKER100/EC601_Project2/assets/91243357/54286df3-c82b-4cdb-af47-f64c12c11e15)
  
-You can also search other users or activities.
+You can also search other users or activities. If you enter nothing, we will show you all users/activities. At the same time, if you only remember a part of the Users name or activity address, you can also search through this part to find users or activities with this part.
  ![image](https://github.com/SORRYMAKER100/EC601_Project2/assets/91243357/e3990ccc-579d-48dd-acba-1e8b56d82440)
  
-After the search you can join their activities or see the map to check the destination.
+After the search you can join their activities or press the button at the last to see the map to check the destination.
  ![image](https://github.com/SORRYMAKER100/EC601_Project2/assets/91243357/23d91531-4e8c-4524-96d7-a6200464da99)
  
-You can choose your mode of travel, as well as search for attractions within a specified area.
+You can choose your mode of travel(drive, walk, bike, public transport), as well as search for attractions within a specified area(1km/2km/3km...).
  ![image](https://github.com/SORRYMAKER100/EC601_Project2/assets/91243357/6b6b72a0-68a2-4971-bd5c-80b297f736d4)
  
 The map will also show you the 3D Street view of the destination.
