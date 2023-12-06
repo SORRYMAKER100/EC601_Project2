@@ -58,7 +58,9 @@ When you first access the web you can choose Register, Log in or Search
  
 This is the Log in interface, when you log in we will check the database to make sure your account number is existed and your password is correct.
  ![image](https://github.com/SORRYMAKER100/EC601_Project2/assets/91243357/11c0c8ff-c49d-4de5-8999-7a3e7eaa859e)
- 
+
+ ![image](https://github.com/SORRYMAKER100/EC601_Project2/assets/91243357/8c51ee60-4401-4994-90ac-555e41893379)
+
 This is the Register interface, if someinformation is missed the web will remind you to fill and the password must longer than 8 but shorter than 16.
  ![image](https://github.com/SORRYMAKER100/EC601_Project2/assets/91243357/b5a85eb5-cf59-4911-bee8-844966d60d3a)
 
@@ -69,7 +71,9 @@ This is the home page of user. We will get your information from the database an
  
 You can choose Create to create new activity. The start time should earlier than the end time. The maxinum must larger than the mininum. And you need to fill all the information, otherwise, the web will send you a message to remind you to fill.
  ![image](https://github.com/SORRYMAKER100/EC601_Project2/assets/91243357/54286df3-c82b-4cdb-af47-f64c12c11e15)
- 
+
+ ![image](https://github.com/SORRYMAKER100/EC601_Project2/assets/91243357/8be8bebf-65cc-40f0-b92d-2cf30cc74c29)
+
 You can also search other users or activities. If you enter nothing, we will show you all users/activities. At the same time, if you only remember a part of the Users name or activity address, you can also search through this part to find users or activities with this part.
  ![image](https://github.com/SORRYMAKER100/EC601_Project2/assets/91243357/e3990ccc-579d-48dd-acba-1e8b56d82440)
  
