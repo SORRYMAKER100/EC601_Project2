@@ -61,7 +61,9 @@ This is the Log in interface, when you log in we will check the database to make
  
 This is the Register interface, if someinformation is missed the web will remind you to fill and the password must longer than 8 but shorter than 16.
  ![image](https://github.com/SORRYMAKER100/EC601_Project2/assets/91243357/b5a85eb5-cf59-4911-bee8-844966d60d3a)
- 
+
+ ![image](https://github.com/SORRYMAKER100/EC601_Project2/assets/91243357/ae1879ad-dfc3-40f2-a231-374556dd7c9f)
+
 This is the home page of user. We will get your information from the database and show some of them in your homepage.
  ![image](https://github.com/SORRYMAKER100/EC601_Project2/assets/91243357/a8dfb5fb-de01-4ef6-b4c0-9fdf7f84146a)
  
