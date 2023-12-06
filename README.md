@@ -1,4 +1,5 @@
 Product Mission Statement
+
 Mission: 
 To connect Boston University students through a secure, intuitive, and flexible event management platform, fostering community engagement, collaboration, and enriching university life.
 
